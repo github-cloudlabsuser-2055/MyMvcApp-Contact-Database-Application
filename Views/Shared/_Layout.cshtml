@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyMvcApp</title>
+    <title>@ViewData["Title"] - MyMvcApp - By power bancochile</p></title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MyMvcApp.styles.css" asp-append-version="true" />
@@ -26,6 +26,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <form class="d-flex" asp-controller="User" asp-action="Search" method="get" style="margin-left: 10px;">
+                        <input class="form-control me-2" type="search" name="query" placeholder="Buscar usuario" aria-label="Buscar" />
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
                 </div>
             </div>
         </nav>

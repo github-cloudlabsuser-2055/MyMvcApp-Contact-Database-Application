@@ -107,4 +107,19 @@ public class UserController : Controller
             }
             return NotFound();
         }
+
+        // GET: User/Search
+        public ActionResult Search(string query)
+        {
+            List<User> results = new List<User>();
+            if (!string.IsNullOrEmpty(query))
+            {
+                results = userlist.Where(u =>
+                    (!string.IsNullOrEmpty(u.Name) && u.Name.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
+                    (!string.IsNullOrEmpty(u.Email) && u.Email.Contains(query, StringComparison.OrdinalIgnoreCase))
+                ).ToList();
+            }
+            ViewBag.Query = query;
+            return View(results);
+        }
 }
